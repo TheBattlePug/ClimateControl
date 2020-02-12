@@ -6,6 +6,7 @@ public class ChangeCamera : MonoBehaviour
 {
     public Camera firstCamera;
     public Camera secondCamera;
+    public Camera thirdCamera;
 
     bool cam = true;
     
@@ -23,13 +24,24 @@ public class ChangeCamera : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            cam = !cam;
-           
+            firstCamera.gameObject.SetActive(cam);
+            secondCamera.gameObject.SetActive(!cam);
+            thirdCamera.gameObject.SetActive(!cam);
         }
 
-        firstCamera.gameObject.SetActive(cam);
-        secondCamera.gameObject.SetActive(!cam);     
-       
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            firstCamera.gameObject.SetActive(!cam);
+            secondCamera.gameObject.SetActive(cam);
+            thirdCamera.gameObject.SetActive(!cam);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            firstCamera.gameObject.SetActive(!cam);
+            secondCamera.gameObject.SetActive(!cam);
+            thirdCamera.gameObject.SetActive(cam);
+        }
     }
 
   }

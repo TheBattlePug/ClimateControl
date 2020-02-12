@@ -26,12 +26,14 @@ public class ScreenMovement : MonoBehaviour
 
         float x = Mathf.Cos(timeCounter) * width;
         float z = Mathf.Sin(timeCounter) * height;
-        
+
 
         float yRotation = (float)(90 / (56 * 63.0));
-        transform.Rotate(0, -1 * yRotation, 0);
 
-        transform.position = new Vector3(x, 0.11f, z);
+        //transform.Rotate(0, -1 * yRotation, 0);
+
+
+        transform.position = new Vector3(x, 0.073f, z);
     }
 
 

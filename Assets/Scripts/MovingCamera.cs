@@ -31,14 +31,12 @@ public class MovingCamera : MonoBehaviour
 
         if(Input.GetAxis("Mouse ScrollWheel") > 0) 
         {
-            GetComponent<Camera>().fieldOfView--;
-            
+            GetComponent<Camera>().fieldOfView--;            
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             GetComponent<Camera>().fieldOfView++;
-
         }
 
 
