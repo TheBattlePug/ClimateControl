@@ -10,30 +10,53 @@ public class ScreenMovement : MonoBehaviour
     float speed = EarthMovement.earthSpeed;
     float width = EarthMovement.width - 1;
     float height = EarthMovement.height - 1;
+    public float dubaiAngle;
+
+    public GameObject Marker;
+    public GameObject Sun;
+
+
+    //public float OrbitSpeed = 10.0f;
 
     
 
     // Start is called before the first frame update
-    void Start()
+        void Start()
     {
-        transform.position = new Vector3(0, 1, 0);
+        //transform.position = new Vector3(0, 1, 0);
+
+        
+        //Maker.transform.position.x;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeCounter += Time.deltaTime * speed;
+        dubaiAngle = -Vector3.Angle(Sun.transform.position, Marker.transform.position);
 
-        float x = Mathf.Cos(timeCounter) * width;
-        float z = Mathf.Sin(timeCounter) * height;
+        Quaternion rotation = Quaternion.Euler(0, dubaiAngle, 0);
+        transform.rotation = rotation;
 
+        //transform.rotation.eulerAngle.y = Quaternion.eulerAngle(0, dubaiAngle, 0);
 
-        float yRotation = (float)(90 / (56 * 63.0));
+        //ScreenRotator.transform.Rotate(0, dubaiAngle, 0);
 
-        //transform.Rotate(0, -1 * yRotation, 0);
+        //this.transform.eulerAngles = dubaiAngle;
 
+        //timeCounter += Time.deltaTime * speed;
 
-        transform.position = new Vector3(x, 0.073f, z);
+        //float x = Mathf.Cos(timeCounter) * width;
+        //float z = Mathf.Sin(timeCounter) * height;
+
+        //transform.RotateAround(Sun.transform.position, Vector3.up, OrbitSpeed/360);
+
+        transform.position = new Vector3(0, -0.060f, 0);
+
+        //if(originalX == trackPosition.transform.position.x && originalZ == track) 
+        //{
+
+        //}
     }
 
 

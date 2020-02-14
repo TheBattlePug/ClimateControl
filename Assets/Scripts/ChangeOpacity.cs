@@ -29,7 +29,7 @@ public class ChangeOpacity : MonoBehaviour
         {
             if (value < 1.0f)
             {
-                value += 0.01f;
+                value += 0.1f;
                 this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, value);
             }
             else
@@ -43,7 +43,7 @@ public class ChangeOpacity : MonoBehaviour
         {
             if (value > 0.0f)
             {
-                value -= 0.01f;
+                value -= 0.1f;
                 this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, value);
             }
             else

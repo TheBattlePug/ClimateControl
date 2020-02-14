@@ -39,9 +39,7 @@ public class EarthMovement : MonoBehaviour
         if (EarthRotation == 180)
         {
             EarthRotation = 0;
-        }
-
-        Debug.Log(EarthRotation);
+        }        
 
 
         transform.position = new Vector3(x, y, z);
