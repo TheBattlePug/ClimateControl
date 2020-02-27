@@ -22,21 +22,21 @@ public class ChangeCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetButtonDown("Camera1"))
         {
             firstCamera.gameObject.SetActive(cam);
             secondCamera.gameObject.SetActive(!cam);
             thirdCamera.gameObject.SetActive(!cam);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetButtonDown("Camera2"))
         {
             firstCamera.gameObject.SetActive(!cam);
             secondCamera.gameObject.SetActive(cam);
             thirdCamera.gameObject.SetActive(!cam);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetButtonDown("Camera3"))
         {
             firstCamera.gameObject.SetActive(!cam);
             secondCamera.gameObject.SetActive(!cam);

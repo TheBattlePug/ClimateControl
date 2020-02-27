@@ -10,11 +10,13 @@ public class ScreenMovement : MonoBehaviour
     float speed = EarthMovement.earthSpeed;
     float width = EarthMovement.width - 1;
     float height = EarthMovement.height - 1;
+
     public float dubaiAngle;
 
     public GameObject Marker;
     public GameObject Sun;
 
+    public GameObject Earth;
 
     //public float OrbitSpeed = 10.0f;
 
@@ -33,11 +35,19 @@ public class ScreenMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dubaiAngle = -Vector3.Angle(Sun.transform.position, Marker.transform.position);
-
+        if (Earth.transform.position.z / Mathf.Abs(Earth.transform.position.z) >= 0)
+        {
+            dubaiAngle = -Vector3.Angle(Sun.transform.position, Marker.transform.position);
+        }
+        else 
+        {
+            dubaiAngle = Vector3.Angle(Sun.transform.position, Marker.transform.position);
+        }
         Quaternion rotation = Quaternion.Euler(0, dubaiAngle, 0);
         transform.rotation = rotation;
 
+
+        
         //transform.rotation.eulerAngle.y = Quaternion.eulerAngle(0, dubaiAngle, 0);
 
         //ScreenRotator.transform.Rotate(0, dubaiAngle, 0);
@@ -53,6 +63,7 @@ public class ScreenMovement : MonoBehaviour
 
         transform.position = new Vector3(0, -0.060f, 0);
 
+       
         //if(originalX == trackPosition.transform.position.x && originalZ == track) 
         //{
 
